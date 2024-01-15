@@ -78,7 +78,7 @@ async function criaMulher(request, response) {
 async function deletaMulher(request ,response) {
     try{
         await Mulher.findByIdDelete(request.params.id)
-        response.send('Exclusão efetuada com sucesso!');
+        response.json('Exclusão efetuada com sucesso!');
 
     }catch(erro){
       comsole.log('Não foi possível excluir', erro)
@@ -96,5 +96,5 @@ function mostraPorta() {
 app.use(router.get('/mulheres', mostraMulheres)) // configurei rota GET/ mulheres
 app.use(router.post('/mulheres', criaMulher)) // configuerei rota POST/ mulheres
 app.use(router.patch('/mulheres/:id',alteraMulher))// configurei a rota PACTH/mulheres/:id
-app.use(router.delete("/mulheres/:id",deletaMulher))// configurei a rota DELETE/mulheres/:id
+app.use(router.delete('/mulheres/:id',deletaMulher))// configurei a rota DELETE/mulheres/:id
 app.listen(porta, mostraPorta) // servidor ouvindo a porta
