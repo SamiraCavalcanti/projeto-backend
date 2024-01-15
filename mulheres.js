@@ -77,7 +77,7 @@ async function criaMulher(request, response) {
 // DELETE
 async function deletaMulher(request ,response) {
     try{
-        await Mulher.findByIdDelete(request.params.id)
+        await Mulher.findByIdAndDelete(request.params.id)
         response.json('Exclusão efetuada com sucesso!');
 
     }catch(erro){
