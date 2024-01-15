@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-require('dot.env').config()
+require('dotenv').config()
 
 async  function conexaoBD (){
   
